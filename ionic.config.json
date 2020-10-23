@@ -1,0 +1,7 @@
+{
+  "name": "Club Booster",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
