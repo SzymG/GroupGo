@@ -14,10 +14,13 @@ import { IonicStorageModule } from '@ionic/storage';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { IsLoggedPipe } from './pipes/is-logged.pipe';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @NgModule({
-    declarations: [AppComponent, IsLoggedPipe],
+    declarations: [AppComponent],
     entryComponents: [],
     imports: [BrowserModule,
         IonicModule.forRoot(),
@@ -33,6 +36,8 @@ import { IsLoggedPipe } from './pipes/is-logged.pipe';
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
     ],
     providers: [
         StatusBar,
@@ -41,6 +46,7 @@ import { IsLoggedPipe } from './pipes/is-logged.pipe';
         NavigationBar,
         TranslateModule,
         HttpClient,
+        AngularFireAuth,
     ],
     bootstrap: [AppComponent]
 })

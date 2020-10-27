@@ -1,18 +1,22 @@
 <p>
-    <span color="danger">
-        <em *ngIf="input.hasError('required') && (input.dirty || input.touched)">{{ "InputMessage.required" | translate }}</em>
-        <em *ngIf="input.hasError('isValidMailFormat') && (input.dirty || input.touched)">{{ "InputMessage.emailFormat" | translate }}</em>
-        <em *ngIf="input.hasError('areEqual') && (input.dirty || input.touched)">{{ "InputMessage.notEqual" | translate }}</em>
-        <em *ngIf="input.hasError('addressValid') && (input.dirty || input.touched)">{{ "InputMessage.addressValid" | translate }}</em>
-        <em *ngIf="input.hasError('isTrue') && (input.dirty || input.touched)">{{ "InputMessage.isTrue" | translate }}</em>
-        <em *ngIf="input.hasError('min') && (input.dirty || input.touched)">{{ "InputMessage.min" | translate }} {{field?.constraints?.MIN}}</em>
-        <em *ngIf="input.hasError('max') && (input.dirty || input.touched)">{{ "InputMessage.max" | translate }} {{field?.constraints?.MAX}}</em>
-        <em *ngIf="input.hasError('range') && (input.dirty || input.touched)">{{ "InputMessage.range" | translate:input.errors }}</em>
-        <em *ngIf="input.hasError('password') && (input.dirty || input.touched)">{{ "InputMessage.password" | translate:input.errors }}</em>
-        <em *ngIf="input.hasError('compareDates') && (input.dirty || input.touched)">{{ "InputMessage.compareDates" | translate }}</em>
+    <span >
+        <ion-text color="danger">
+            <span *ngIf="input.hasError('required') && (input.dirty || input.touched)">{{ "InputMessage.required" | translate }}</span>
+            <span *ngIf="input.hasError('isValidMailFormat') && (input.dirty || input.touched)">{{ "InputMessage.emailFormat" | translate }}</span>
+            <span *ngIf="input.hasError('areEqual') && (input.dirty || input.touched)">{{ "InputMessage.notEqual" | translate }}</span>
+            <span *ngIf="input.hasError('addressValid') && (input.dirty || input.touched)">{{ "InputMessage.addressValid" | translate }}</span>
+            <span *ngIf="input.hasError('isTrue') && (input.dirty || input.touched)">{{ "InputMessage.isTrue" | translate }}</span>
+            <span *ngIf="input.hasError('min') && (input.dirty || input.touched)">{{ "InputMessage.min" | translate }} {{field?.constraints?.MIN}}</span>
+            <span *ngIf="input.hasError('max') && (input.dirty || input.touched)">{{ "InputMessage.max" | translate }} {{field?.constraints?.MAX}}</span>
+            <span *ngIf="input.hasError('range') && (input.dirty || input.touched)">{{ "InputMessage.range" | translate:input.errors }}</span>
+            <span *ngIf="input.hasError('password') && (input.dirty || input.touched)">{{ "InputMessage.password" | translate:input.errors }}</span>
+            <span *ngIf="input.hasError('compareDates') && (input.dirty || input.touched)">{{ "InputMessage.compareDates" | translate }}</span>
+            <span *ngIf="input.hasError('loginError') && (input.dirty || input.touched)">{{ "InputMessage.loginError" | translate }}</span>
+            <span *ngIf="input.hasError('registerError') && (input.dirty || input.touched)">{{ "InputMessage.registerError" | translate }}</span>
+        </ion-text>
     </span>
 
     <span color="secondary">
-        <em *ngIf="input.valid && (input.dirty || input.touched)"></em>
+        <span *ngIf="input.valid && (input.dirty || input.touched)"></span>
     </span>
 </p>

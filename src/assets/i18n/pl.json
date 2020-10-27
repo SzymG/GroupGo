@@ -27,7 +27,9 @@
         "password": "Hasło powinno zawierać przynajmniej 8 znaków, w tym jedną dużą literę i jedną cyfrę.",
         "compareDates": "Data rozpoczęcia powinna być mniejsza lub równa od daty kończącej wydarzenie",
         "integer": "Pole powinno być całkowitoliczbowe",
-        "boolean": "Pole powinno mieć wartośc 0 lub 1"
+        "boolean": "Pole powinno mieć wartośc 0 lub 1",
+        "loginError": "Nie udało się zalogować",
+        "registerError": "Nie udało się zarejestrować"
     },
     "RegisterPage": {
         "pageName": "Rejestracja",
@@ -37,7 +39,8 @@
         "email": "Adres e-mail",
         "password": "Hasło",
         "confirmPassword": "Powtórz hasło",
-        "submit": "Zarejestruj się"
+        "submit": "Zarejestruj się",
+        "success": "Pomyślnie zarejestrowano. Zaloguj się!"
     },
     "LoginPage": {
         "pageName": "Logowanie",

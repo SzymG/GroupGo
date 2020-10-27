@@ -52,7 +52,7 @@
         </ion-toolbar>
     </ion-header>
 
-    <ion-tabs *ngIf="(userService.isAuthenticated()); else notLoggedIn">
+    <ion-tabs *ngIf="(userService.isFirebaseAuthenticatedSubscription()) | async; else notLoggedIn">
         <ion-tab-bar id="content" color="dark" slot="bottom">
             <ion-tab-button tab="club">
                 <ion-icon name="football"></ion-icon>

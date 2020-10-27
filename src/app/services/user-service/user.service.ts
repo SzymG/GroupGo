@@ -3,50 +3,41 @@ import { Storage } from '@ionic/storage';
 import {Platform} from '@ionic/angular';
 import {Router} from '@angular/router';
 import {BehaviorSubject} from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
+import {first} from "rxjs/operators";
 
 export const LANGUAGE_KEY = 'language';
-export const TOKEN_KEY = 'token';
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
-    authenticationState = new BehaviorSubject(true);
 
-    constructor(private readonly storage: Storage, private readonly plt: Platform, private readonly router: Router) {
-        this.plt.ready().then(() => {
-            this.checkToken();
-        });
+    constructor(
+        private readonly storage: Storage,
+        private readonly plt: Platform,
+        private readonly router: Router,
+        public afAuth: AngularFireAuth,
+    ) {
     }
 
-    login(token) {
-        return this.storage.set(TOKEN_KEY, token).then(() => {
-            this.authenticationState.next(true);
-            this.router.navigate(['profile'], { skipLocationChange: true });
-        });
+    login(formValue) {
+        const {email, password} = formValue;
+        return this.afAuth.auth.signInWithEmailAndPassword(email, password);
+    }
+
+    register(formValue) {
+        const username = formValue.email;
+        const password = formValue.matchingPassword.password;
+
+        return this.afAuth.auth.createUserWithEmailAndPassword(username, password);
     }
 
     logout() {
-        return this.storage.remove(TOKEN_KEY).then(() => {
-            this.authenticationState.next(false);
+        this.afAuth.auth.signOut().then((res) => {
+            console.log(res);
             this.router.navigate(['home']);
-        });
-    }
-
-    isAuthenticated() {
-        return this.authenticationState.value;
-    }
-
-    checkToken() {
-        return new Promise(resolve => {
-            this.storage.get(TOKEN_KEY).then(res => {
-                if (res) {
-                    this.authenticationState.next(true);
-                } else {
-                    this.authenticationState.next(false);
-                }
-                resolve(res);
-            });
         });
     }
 
@@ -58,11 +49,11 @@ export class UserService {
         return this.storage.get(LANGUAGE_KEY);
     }
 
-    setToken(token) {
-        return this.storage.set(TOKEN_KEY, token);
+    isFirebaseAuthenticated() {
+        return this.afAuth.authState.pipe(first()).toPromise();
     }
 
-    getToken() {
-        return this.storage.get(TOKEN_KEY);
+    isFirebaseAuthenticatedSubscription() {
+        return this.afAuth.authState;
     }
 }

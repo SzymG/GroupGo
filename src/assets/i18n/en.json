@@ -27,7 +27,9 @@
         "password": "Password should contain at least 8 characters, including one digit and one capital letter",
         "compareDates": "Start date should be less or equal than end date of event",
         "integer": "The field should be integer",
-        "boolean": "The field should be 0 or 1"
+        "boolean": "The field should be 0 or 1",
+        "loginError": "Login failed",
+        "registerError": "Register failed"
     },
     "RegisterPage": {
         "pageName": "Registration",
@@ -37,7 +39,8 @@
         "email": "Email address",
         "password": "Password",
         "confirmPassword": "Repeat password",
-        "submit": "Register"
+        "submit": "Register",
+        "success": "Register successfully. Log in!"
     },
     "LoginPage": {
         "pageName": "Login",
@@ -45,6 +48,7 @@
         "password": "Password",
         "login": "Log in",
         "noAccount": "No account?",
-        "register": "Register"
+        "register": "Register",
+        "auth/user-not-found": "Invalid login data"
     }
 }
