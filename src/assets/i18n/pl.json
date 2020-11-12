@@ -3,6 +3,7 @@
         "confirm": "Zatwierdź",
         "cancel": "Anuluj",
         "club": "Klub",
+        "group": "Grupa",
         "profile": "Profil"
     },
     "Language": {
@@ -49,5 +50,20 @@
         "login": "Zaloguj się",
         "noAccount": "Nie masz konta?",
         "register": "Zarejestruj się"
+    },
+    "Profile": {
+        "title": "Profil",
+        "logout": "Wyloguj",
+        "clickToUpload": "Kliknij, aby dodać",
+        "firstName": "Imię",
+        "lastName": "Nazwisko",
+        "career": "Kariera",
+        "dateCreation": "Data utworzenia",
+        "birthYear": "Data urodzenia",
+        "email": "Adres e-mail",
+        "description": "Opis",
+        "save": "Zapisz",
+        "success": "Pomyślnie zaktualizowano profil",
+        "failure": "Nie udało się zaktualizować profilu, spróbuj ponownie później"
     }
 }

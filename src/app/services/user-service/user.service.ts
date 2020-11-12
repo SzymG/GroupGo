@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 import {BehaviorSubject} from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
-import {first} from "rxjs/operators";
+import {first} from 'rxjs/operators';
 
 export const LANGUAGE_KEY = 'language';
 
@@ -14,12 +14,17 @@ export const LANGUAGE_KEY = 'language';
 })
 export class UserService {
 
+    authState: any = null;
+
     constructor(
         private readonly storage: Storage,
         private readonly plt: Platform,
         private readonly router: Router,
         public afAuth: AngularFireAuth,
     ) {
+        this.afAuth.authState.subscribe((data) => {
+            this.authState = data;
+        });
     }
 
     login(formValue) {
@@ -55,5 +60,13 @@ export class UserService {
 
     isFirebaseAuthenticatedSubscription() {
         return this.afAuth.authState;
+    }
+
+    get currentUserId(): string {
+        return this.authState !== null ? this.authState.uid : null;
+    }
+
+    updateUser(data) {
+        return this.afAuth.auth.currentUser.updateProfile(data);
     }
 }

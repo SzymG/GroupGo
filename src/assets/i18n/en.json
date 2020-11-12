@@ -3,6 +3,7 @@
         "confirm": "Confirm",
         "cancel": "Cancel",
         "club": "Club",
+        "group": "Group",
         "profile": "Profile"
     },
     "Language": {
@@ -50,5 +51,20 @@
         "noAccount": "No account?",
         "register": "Register",
         "auth/user-not-found": "Invalid login data"
+    },
+    "Profile": {
+        "title": "Profile",
+        "logout": "Logout",
+        "clickToUpload": "Click to upload",
+        "firstName": "First name",
+        "lastName": "Last name",
+        "career": "Career",
+        "dateCreation": "Date creation",
+        "birthYear": "Birth date",
+        "email": "E-mail address",
+        "description": "Description",
+        "save": "Save",
+        "success": "Profile saved successfully",
+        "failure": "Profile update failed, please try again later"
     }
 }

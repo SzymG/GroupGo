@@ -111,3 +111,8 @@ ion-content.side-menu-content {
         margin-right: auto;
     }
 }
+
+ion-tabs {
+    margin-top: 56px !important;
+    height: calc( 100% - 56px ) !important;
+}

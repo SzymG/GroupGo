@@ -55,8 +55,8 @@
     <ion-tabs *ngIf="(userService.isFirebaseAuthenticatedSubscription()) | async; else notLoggedIn">
         <ion-tab-bar id="content" color="dark" slot="bottom">
             <ion-tab-button tab="club">
-                <ion-icon name="football"></ion-icon>
-                <ion-label>{{'Common.club' | translate}}</ion-label>
+                <ion-icon name="people"></ion-icon>
+                <ion-label>{{'Common.group' | translate}}</ion-label>
             </ion-tab-button>
 
             <ion-tab-button tab="profile">

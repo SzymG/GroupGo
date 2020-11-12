@@ -23,9 +23,9 @@ export class AppComponent {
         private splashScreen: SplashScreen,
         private statusBar: StatusBar,
         private navigationBar: NavigationBar,
-        private userService: UserService,
         private translate: TranslateService,
         private alertController: AlertController,
+        public userService: UserService,
     ) {
         this.initializeApp();
     }
