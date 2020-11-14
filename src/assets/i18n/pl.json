@@ -4,7 +4,8 @@
         "cancel": "Anuluj",
         "club": "Klub",
         "group": "Grupa",
-        "profile": "Profil"
+        "profile": "Profil",
+        "set": "Ustaw"
     },
     "Language": {
         "chooseLanguage": "Wybierz język aplikacji",
@@ -64,6 +65,22 @@
         "description": "Opis",
         "save": "Zapisz",
         "success": "Pomyślnie zaktualizowano profil",
-        "failure": "Nie udało się zaktualizować profilu, spróbuj ponownie później"
+        "failure": "Nie udało się zaktualizować profilu, spróbuj ponownie później",
+        "myCars": "Moje samochody"
+    },
+    "ClubPage": {
+        "title": "Grupa",
+        "createDrive": "Dodaj przejazd",
+        "archive": "Archiwum przejazdów",
+        "drives": "Aktualne przejazdy",
+        "name": "Tytuł",
+        "create": "Stwórz",
+        "driveDate": "Data przejazdu",
+        "numberOfPlaces": "Liczba wolnych miejsc",
+        "distance": "Przybliżony dystans",
+        "price": "Cena przejazdu",
+        "pricePerPerson": "Cena przejazdu na osobę",
+        "created": "Pomyślnie utworzono przejazd!",
+        "notCreated": "Nie udało się utworzyć przejazdu :("
     }
 }

@@ -116,3 +116,13 @@ ion-tabs {
     margin-top: 56px !important;
     height: calc( 100% - 56px ) !important;
 }
+
+ion-toolbar {
+    ion-icon {
+        font-size: 1.8rem;
+    }
+}
+
+.picker-wrapper {
+    background: #222428 !important;
+}

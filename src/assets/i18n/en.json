@@ -4,7 +4,8 @@
         "cancel": "Cancel",
         "club": "Club",
         "group": "Group",
-        "profile": "Profile"
+        "profile": "Profile",
+        "set": "Set"
     },
     "Language": {
         "chooseLanguage": "Choose app language",
@@ -65,6 +66,7 @@
         "description": "Description",
         "save": "Save",
         "success": "Profile saved successfully",
-        "failure": "Profile update failed, please try again later"
+        "failure": "Profile update failed, please try again later",
+        "myCars": "My cars"
     }
 }

@@ -1,9 +1,26 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>club</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <ion-grid class="main-theme-grid">
+    <div>
+      <ion-row class="ion-margin-bottom">
+        <ion-col>
+          <ion-img src="../../assets/img/logo_small.png" class="logo-image"></ion-img>
+        </ion-col>
+      </ion-row>
 
+      <ion-row>
+        <ion-col size="12">
+          <ion-button color="dark" type="button" expand="block" class="padding-button"
+                      [routerLink]="['/club/drive']">{{ "ClubPage.drives" | translate }}</ion-button>
+        </ion-col>
+        <ion-col size="12">
+          <ion-button color="dark" type="button" expand="block" class="padding-button"
+                      (click)="showCreateModal()">{{ "ClubPage.createDrive" | translate }}</ion-button>
+        </ion-col>
+        <ion-col size="12">
+          <ion-button color="dark" type="button" expand="block" class="padding-button"
+                      [routerLink]="['/club/archive']">{{ "ClubPage.archive" | translate }}</ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
 </ion-content>
