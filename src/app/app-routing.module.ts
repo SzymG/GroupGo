@@ -30,7 +30,16 @@ const routes: Routes = [
         loadChildren: './pages/club/club.module#ClubPageModule',
         canActivate: [AuthGuardService]
     },
-
+    {
+        path: 'club/drive',
+        loadChildren: './pages/club/drive/drive.module#DrivePageModule',
+        canActivate: [AuthGuardService]
+    },
+    {
+        path: 'club/archive',
+        loadChildren: './pages/club/archive/archive.module#ArchivePageModule',
+        canActivate: [AuthGuardService]
+    },
 ];
 
 @NgModule({

@@ -5,7 +5,8 @@
         "club": "Club",
         "group": "Group",
         "profile": "Profile",
-        "set": "Set"
+        "set": "Set",
+        "loading": "Loading"
     },
     "Language": {
         "chooseLanguage": "Choose app language",

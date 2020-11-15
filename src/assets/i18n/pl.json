@@ -5,7 +5,8 @@
         "club": "Klub",
         "group": "Grupa",
         "profile": "Profil",
-        "set": "Ustaw"
+        "set": "Ustaw",
+        "loading": "Ładowanie"
     },
     "Language": {
         "chooseLanguage": "Wybierz język aplikacji",
@@ -81,6 +82,7 @@
         "price": "Cena przejazdu",
         "pricePerPerson": "Cena przejazdu na osobę",
         "created": "Pomyślnie utworzono przejazd!",
-        "notCreated": "Nie udało się utworzyć przejazdu :("
+        "notCreated": "Nie udało się utworzyć przejazdu :(",
+        "noDrives": "Aktualnie nie ma żadnych przejazdów"
     }
 }
