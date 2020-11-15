@@ -12,19 +12,27 @@ export class DrivePage implements OnInit {
 
     constructor(
         private readonly driveService: DriveService,
-    ) {
+    ) {}
+
+    ngOnInit() {
+    }
+
+    ionViewWillEnter() {
+        this.loading = true;
         this.driveService.getDrives().subscribe((res: any) => {
             this.drives = res.filter((item) => {
                 return (new Date(item.payload.doc.data().start_date) > new Date());
             }).map((it) => {
-                return it.payload.doc.data();
+                return it.payload.doc;
             });
 
             this.loading = false;
         });
     }
 
-    ngOnInit() {
+    onEmitted(dataChanged) {
+        if (dataChanged === true) {
+            this.ionViewWillEnter();
+        }
     }
-
 }

@@ -69,7 +69,9 @@ export class GoogleMapComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.tmpListener();
+        if (this.editable) {
+            this.tmpListener();
+        }
     }
 
     private initMap() {

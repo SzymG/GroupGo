@@ -17,7 +17,7 @@ export class ArchivePage implements OnInit {
             this.drives = res.filter((item) => {
                 return (new Date(item.payload.doc.data().start_date) < new Date());
             }).map((it) => {
-                return it.payload.doc.data();
+                return it.payload.doc;
             });
 
             this.loading = false;

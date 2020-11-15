@@ -137,3 +137,11 @@ ion-toolbar {
 .picker-wrapper {
     background: #222428 !important;
 }
+
+.alert-wrapper {
+    background: #222428 !important;
+
+    .alert-message, .alert-title, button {
+        color: #ffffff !important;
+    }
+}

@@ -26,7 +26,7 @@ export class DriveService {
         return this.driveCollection.add(data);
     }
 
-    // delete(id: string) {
-    //     this.getSingleDriveData(id).delete();
-    // }
+    delete(id: string) {
+        return this.afs.doc<Drive>(`drive/${id}`).delete();
+    }
 }

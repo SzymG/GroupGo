@@ -11,7 +11,7 @@
                     <h2>{{"ClubPage.drives" | translate}}</h2>
                 </ion-col>
                 <ion-col size="12" *ngFor="let drive of drives">
-                    <app-drive-item [item]="drive" [isArchive]="false"></app-drive-item>
+                    <app-drive-item [item]="drive" [isArchive]="false" (dataChanged)="onEmitted($event)"></app-drive-item>
                 </ion-col>
             </ion-row>
             <ng-template #noDrivesTemplate>

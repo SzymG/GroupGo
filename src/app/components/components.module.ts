@@ -5,12 +5,14 @@ import { InputMessageComponent } from './input-message/input-message.component';
 import { TranslateModule } from '@ngx-translate/core';
 import {GoogleMapComponent} from './google-map/google-map.component';
 import {DriveItemComponent} from './drive-item/drive-item.component';
+import {DriveInfoComponent} from './drive-info/drive-info.component';
 
 @NgModule({
     declarations: [
         InputMessageComponent,
         GoogleMapComponent,
         DriveItemComponent,
+        DriveInfoComponent,
     ],
     imports: [
         CommonModule,
@@ -21,6 +23,10 @@ import {DriveItemComponent} from './drive-item/drive-item.component';
         InputMessageComponent,
         GoogleMapComponent,
         DriveItemComponent,
+        DriveInfoComponent,
+    ],
+    entryComponents: [
+        DriveInfoComponent,
     ]
 })
 export class ComponentsModule { }

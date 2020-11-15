@@ -1,3 +1,24 @@
-<p>
-  drive-item works!
-</p>
+<div class="container" (click)="openDriveModal()">
+    <ion-col size="4" class="flex-center">
+        <ion-img src="../../assets/img/driver_{{this.isArchive ? 'old' : 'young'}}.png" class="driver-image"></ion-img>
+    </ion-col>
+    <ion-col size="7">
+        <ion-row>
+            <ion-col size="12">
+                {{itemData.title | uppercase}}
+            </ion-col>
+            <ion-col size="12">
+                {{"ClubPage.numberOfPlaces" | translate}}: {{itemData.number_of_places}}
+            </ion-col>
+            <ion-col size="12">
+                {{"ClubPage.date" | translate}}: {{itemData.start_date | date:"dd.MM.yyy H:mm"}}
+            </ion-col>
+            <ion-col size="12">
+                {{"ClubPage.price" | translate}}: {{itemData.price_per_person}}zł
+            </ion-col>
+        </ion-row>
+    </ion-col>
+    <ion-col size="1" class="flex-center">
+        <ion-icon name="arrow-forward"></ion-icon>
+    </ion-col>
+</div>
