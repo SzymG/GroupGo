@@ -78,7 +78,8 @@
         "create": "Stwórz",
         "driveDate": "Data przejazdu",
         "date": "Data",
-        "numberOfPlaces": "Liczba wolnych miejsc",
+        "numberOfFreePlaces": "Liczba wolnych miejsc",
+        "numberOfPlaces": "Liczba miejsc",
         "distance": "Przybliżony dystans",
         "price": "Cena przejazdu",
         "pricePerPerson": "Cena przejazdu na osobę",
@@ -90,10 +91,16 @@
         "deleteDrive": "Usuń przejazd",
         "deleteDriveConfirm": "Czy na pewno chcesz usunąć przejazd? Operacja jest nieodwacalna.",
         "enrollDrive": "Dołącz do przejazdu",
+        "enrolledDrive": "Dołączono do przejazdu!",
+        "notEnrolledDrive": "Nie udało się dołączyć do przejazdu :(",
         "leaveDrive": "Opuść przejazd",
+        "leavedDrive": "Opuszczono przejazd",
+        "notLeavedDrive": "Nie udało się opuścić przejazdu",
         "deleted": "Pomyślnie usunięto przejazd!",
         "notDeleted": "Nie udało się usunąć przejazdu :(",
         "driveUsers": "Uczestnicy przejazdu",
-        "noDriveUsers": "Nikt jeszcze nie uczestniczy w przejeździe. Bądź pierwszy! :)"
+        "noDriveUsers": "Nikt jeszcze nie uczestniczy w przejeździe",
+        "noArchiveDriveUsers": "Nikt nie uczestniczył w tym przejeździe",
+        "driveFull": "Brak wolnych miejsc!"
     }
 }

@@ -1,9 +1,25 @@
+.presence-toolbar {
+    border-radius: 10px 10px 0 0;
+}
+
 ion-list {
     background: #222428;
+    border-radius: 0 0 10px 10px;
 
     ion-spinner {
         color: white;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+.group-user {
+    ion-img {
+        height: 50px;
+        width: 50px;
+    }
+
+    ion-label {
+        padding: 10px;
     }
 }

@@ -18,7 +18,8 @@
                 <ion-col size="12">
                     <ion-row>
                         <ion-col size="3" class="flex-center">
-                            <ion-img src="../../assets/img/driver_{{this.isArchive ? 'old' : 'young'}}.png" class="driver-image"></ion-img>
+                            <ion-img src="../../assets/img/driver_{{this.isArchive ? 'old' : 'young'}}.png"
+                                     class="driver-image"></ion-img>
                         </ion-col>
                         <ion-col size="9">
                             <ion-row>
@@ -29,7 +30,8 @@
                                     {{"ClubPage.numberOfPlaces" | translate}}: {{itemData.number_of_places}}
                                 </ion-col>
                                 <ion-col size="12">
-                                    {{"ClubPage.driveDate" | translate}}: {{itemData.start_date | date:"dd.MM.yyy H:mm"}}
+                                    {{"ClubPage.driveDate" | translate}}
+                                    : {{itemData.start_date | date:"dd.MM.yyy H:mm"}}
                                 </ion-col>
                                 <ion-col size="12">
                                     {{"ClubPage.price" | translate}}: {{itemData.price_per_person}}zł
@@ -42,13 +44,14 @@
                     </ion-row>
                     <ion-row style="height: 300px; border-radius: 10px">
                         <ion-col>
-                            <app-google-map [start]="itemData.start_point" [end]="itemData.end_point" [editable]="false"></app-google-map>
+                            <app-google-map [start]="itemData.start_point" [end]="itemData.end_point"
+                                            [editable]="false"></app-google-map>
                         </ion-col>
                     </ion-row>
                     <ion-row>
                         <ion-col>
                             <ion-toolbar color="dark" class="presence-toolbar">
-                                <ion-segment>
+                                <ion-segment [(ngModel)]="approved">
                                     <ion-segment-button value="approved" class="ion-no-padding">
                                         {{ 'ClubPage.driveUsers' | translate }}
                                     </ion-segment-button>
@@ -61,30 +64,42 @@
                                 <ng-template #list>
                                     <ng-container *ngIf="driveUsers && driveUsers.length; else noUsersTemplate">
                                         <ion-item color="dark" *ngFor="let user of driveUsers" class="group-user">
-                                            USER
-                                            <!-- TODO zrobić ładnie wyświetlanie -->
-                                            <!--                                        <ion-img src="{{user.avatar_url || '/assets/img/user.png'}}"></ion-img>-->
-                                            <!--                                        <ion-label>{{user.name && user.surname ? user.name + ' ' +-->
-                                            <!--user.surname : translateService.instant('ClubPage.anonymusUser')}}</ion-label>-->
+                                            <ion-img src="{{user.data().user_photo || '/assets/img/user.png'}}"></ion-img>
+                                            <ion-label class="ion-margin-start">{{user.data().user_name}}</ion-label>
+                                        </ion-item>
                                     </ng-container>
                                     <ng-template #noUsersTemplate>
-                                        <ion-label>{{"ClubPage.noDriveUsers" | translate}}</ion-label>
+                                        <p class="ion-margin-horizontal ion-text-center">{{"ClubPage."+(isArchive ? "noArchiveDriveUsers" : "noDriveUsers") | translate}}</p>
                                     </ng-template>
-                                    </ion-item>
                                 </ng-template>
+                                <ion-item *ngIf="isDriveFull;" color="dark">
+                                    <p class="ion-margin-horizontal ion-text-center" style="width: 100%;">{{"ClubPage.driveFull" | translate}}</p>
+                                </ion-item>
                             </ion-list>
                         </ion-col>
                     </ion-row>
                     <ion-row>
                         <ion-col size="12">
-                            <ion-button *ngIf="isAuthor" color="dark" expand="block" size="large" type="submit" class="ion-margin-top" (click)="deleteDrive()">
+                            <ion-button *ngIf="isAuthor" color="dark" expand="block" size="large" type="submit"
+                                        class="ion-margin-top" (click)="deleteDrive()">
                                 {{"ClubPage.deleteDrive" | translate}}</ion-button>
-                            <ng-container *ngIf="!isAuthor && !isArchive">
-                                <ion-button *ngIf="isCurrentUserDriveEnrolled" color="dark" expand="block" size="large" type="submit" class="ion-margin-top" (click)="leaveDrive()">
-                                    {{"ClubPage.leaveDrive" | translate}}</ion-button>
-                                <ion-button *ngIf="!isCurrentUserDriveEnrolled" color="dark" expand="block" size="large" type="submit" class="ion-margin-top" (click)="enrollDrive()">
-                                    {{"ClubPage.enrollDrive" | translate}}</ion-button>
+                            <ng-container *ngIf="!isAuthor && !isArchive && !isDriveFull">
+                                <ion-button *ngIf="isCurrentUserDriveEnrolled" color="dark" expand="block" size="large"
+                                            type="submit" class="ion-margin-top" (click)="leaveDrive()">
+                                    <ng-container *ngIf="!saving; else savingTemplate">
+                                        {{"ClubPage.leaveDrive" | translate}}
+                                    </ng-container>
+                                </ion-button>
+                                <ion-button *ngIf="!isCurrentUserDriveEnrolled" color="dark" expand="block" size="large"
+                                            type="submit" class="ion-margin-top" (click)="enrollDrive()">
+                                    <ng-container *ngIf="!saving; else savingTemplate">
+                                        {{"ClubPage.enrollDrive" | translate}}
+                                    </ng-container>
+                                </ion-button>
                             </ng-container>
+                            <ng-template #savingTemplate>
+                                <ion-spinner name="lines" color="light"></ion-spinner>
+                            </ng-template>
                         </ion-col>
                     </ion-row>
                 </ion-col>

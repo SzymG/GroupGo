@@ -6,6 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import {GoogleMapComponent} from './google-map/google-map.component';
 import {DriveItemComponent} from './drive-item/drive-item.component';
 import {DriveInfoComponent} from './drive-info/drive-info.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import {DriveInfoComponent} from './drive-info/drive-info.component';
         CommonModule,
         IonicModule,
         TranslateModule,
+        FormsModule,
     ],
     exports: [
         InputMessageComponent,

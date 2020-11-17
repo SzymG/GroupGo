@@ -90,4 +90,8 @@ export class AppComponent {
     get imageIconUrl() {
         return this.currentLanguage === 'en' ? this.ukFlagUrl : this.plFlagUrl;
     }
+
+    logout() {
+        this.userService.logout();
+    }
 }

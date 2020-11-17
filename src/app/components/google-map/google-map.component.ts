@@ -75,8 +75,8 @@ export class GoogleMapComponent implements OnInit, OnDestroy {
     }
 
     private initMap() {
-        const coords = new google.maps.LatLng(52.392682, 16.919682);
-        const endCoords = new google.maps.LatLng(52.406376, 16.925167);
+        const coords = this.start;
+        const endCoords = this.end;
         const mapOptions: google.maps.MapOptions = {
             center: coords,
             zoom: 12,
